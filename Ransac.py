@@ -122,7 +122,7 @@ cloud_filtered = outlier_filter.filter()
 
 #Save pcd for cloud
 filename = 'extracted_outliers.pcd'
-#pcl.save(extracted_outliers, filename)
+pcl.save(extracted_outliers, filename)
 
 #extract outliers
 
