@@ -171,7 +171,7 @@ Image registration is the process of transforming the data frame from one camera
 NOTE: This is essential for the creation of an accurate point cloud.
 
 ## RGBD in ROS
-Now we explore calibration in ROS's ![image_pipeline][link1]
+Now we explore calibration in ROS's [image_pipeline][link1]
 # Point Cloud Filtering 
 
 ## Voxel Grid Downsampling  
