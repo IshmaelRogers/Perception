@@ -225,6 +225,10 @@ The region that is allow to pass through the filter and remove some excess data.
 
 ## Segmentation
 
+In this step we will divide the point cloud data into smaller subsets based on some common property. Moreover, we can seperate the data into meaningful pieces based on shape, color, size or neighborhood. 
+
+NOTE: In our project, the table itself is segmented out
+
 ## RANSAC
 
 ## RANSAC Plane Fitting 
