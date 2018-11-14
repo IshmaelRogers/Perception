@@ -107,7 +107,7 @@ Step 0. cv2.findChessboardCorners()
 --
 Finds corners in chessboard images and combines arrays of 2D image points and 3D object points
 
-Step 1. cv2.calibratCamera()
+Step 1. cv2.calibrateCamera()
 ---
 Computes the calibration matrices and distortion coefficients 
 
@@ -120,7 +120,37 @@ Intrinsics vs Extrinsics
 Intrinsic parameters are things that are inherent to the camera's focal length and optical center as well as the distortion coefficients.
 NOTE: These properties remain the same no matter how the camera is positioned in the world.
 
-Extrinsic parameters of the calibration process describe how the cam
+Extrinsic parameters of the calibration process describe how the camera's reference frame is oriented within the world reference frame. 
+
+## Intrinsic Calibration
+
+Use this to explore the topic of intrinsic calibration more closely. --> https://github.com/udacity/RoboND-Camera-Calibration
+
+Once we have the follwoing, we are ready to perform the intrinsic calibration:
+0. Object points
+1. Image points 
+2. (x,y) shape of the image
+
+In OpenCV we will use the cv2.calibrateCamera() function as seen below:
+ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, (img.shape[1], img.shape[0]), None, None)
+NOTE: The outputs that contain the intrinsic camera matrix and distortion coefficients are:
+
+0. mtx -> intrinsic camera matrix
+<a href="https://www.codecogs.com/eqnedit.php?latex=intrinsic\&space;camera\&space;matrix&space;=&space;\begin{bmatrix}&space;f_{x}&space;&0&space;&c_{x}&space;\\&space;0&space;&&space;f_{y}&space;&c_{y}&space;\\&space;0&space;&0&space;&1&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?intrinsic\&space;camera\&space;matrix&space;=&space;\begin{bmatrix}&space;f_{x}&space;&0&space;&c_{x}&space;\\&space;0&space;&&space;f_{y}&space;&c_{y}&space;\\&space;0&space;&0&space;&1&space;\end{bmatrix}" title="intrinsic\ camera\ matrix = \begin{bmatrix} f_{x} &0 &c_{x} \\ 0 & f_{y} &c_{y} \\ 0 &0 &1 \end{bmatrix}" /></a>
+
+Where <a href="https://www.codecogs.com/eqnedit.php?latex=f_{x}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{x}" title="f_{x}" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=f_{y}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{y}" title="f_{y}" /></a> correspond to the focal length. 
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=c_{x}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?c_{x}" title="c_{x}" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=c_{y}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?c_{y}" title="c_{y}" /></a> correspond to the camera's optical center in the (x,y) plane. 
+
+1. dist -> distortion cofficients
+<a href="https://www.codecogs.com/eqnedit.php?latex=distortion\&space;coefficients&space;=&space;(k_{1},&space;k_{2},&space;p_{1},&space;p_{2},&space;k_{3})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?distortion\&space;coefficients&space;=&space;(k_{1},&space;k_{2},&space;p_{1},&space;p_{2},&space;k_{3})" title="distortion\ coefficients = (k_{1}, k_{2}, p_{1}, p_{2}, k_{3})" /></a>
+NOTE: The k's are radial disortion coefficients and p's are tangential distortion coefficients
+NOTE: We apply the undist = cv2.undistort(img, mtx, dist, None, mtx) to apply the above equations
+
+Please see cameraCalibration.py to run the code that implements this process.
+
+
+
 
 ## Extrinsic Calibration
 
