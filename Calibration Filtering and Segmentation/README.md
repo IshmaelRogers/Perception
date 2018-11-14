@@ -197,13 +197,31 @@ NOTE: Processing this excessive data is inefficient and can cause you to waste c
 
 
 ## Voxel Grid Downsampling  
-Becuase RGB-D cameras provide feature rich and dense point clouds, it is best to downsample the data
+Becuase RGB-D cameras provide feature rich and dense point clouds, it is best to downsample the data using a Voxel Grid Downsampling Filter.  
+
+A voxel grid filter allows for the downsampling of data by a spatial average of the points in the cloud confined by each voxel. The sampling size can ve adjusted by setting the voxel size along each dimension. 
 
 ![alt text][image6]
 
+A voxel is short for volume element and is the 3D version of the pixels.
 
+We can view the results of the downsampling using pcl_viewer
 
+$ python RANSAC.py
+$ pcl_viewer voxel_downsampled.pcd 
+
+NOTE: The voxel size (or leaf size) are measured in meters. Therefore setting it to 1 implies that the voxel is 1 cubic meter in volume
+which might not be ideal as it will remove important features. 
+NOTE: In practice, it is typically best to start with a small voxel size and then increment to a larger size until a point is reach that any further increase would result in a loss of important features. 
 ## Pass Through Filter 
+Given prior information about the location of the target in the scene, a Pass Through Filter can be applied to remove useless data from your point cloud. 
+
+The Pass Through Filter is similar to a cropping tool, which allows you to crop any given 3D point cloud by specifying an axis with cut-off values along that axis. 
+
+Region of Interest
+---
+The region that is allow to pass through the filter and remove some excess data.
+
 
 ## Segmentation
 
