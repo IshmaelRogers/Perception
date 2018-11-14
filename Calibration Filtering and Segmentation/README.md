@@ -3,14 +3,14 @@
 ## www.idrg.io  
 ## 2018
 
-[image1]: PinHoleModel
-[image2]: LensModel
-[image3]: chessboard
-[image4]: chessboard_angles
-[image5]: corner_found
+[image1]: ./Calibration Filtering and Segmentation/images/PinHoleModel.PNG
+[image2]: ./Calibration Filtering and Segmentation/images/LensModel.PNG
+[image3]: ./Calibration Filtering and Segmentation/images/chessboard.jpg
+[image4]: ./Calibration Filtering and Segmentation/images/chessboard_angles.png
+[image5]: ./Calibration Filtering and Segmentation/images/corners-found.jpg
 [link1]: http://wiki.ros.org/image_pipeline
-[image6]: voxelDS
-[image7]: inliers_outliers
+[image6]: ./Calibration Filtering and Segmentation/images/voxelDS.png
+[image7]: ./Calibration Filtering and Segmentation/images/inliers_outliers.png
 
 
 # Calibration 
