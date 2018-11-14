@@ -99,6 +99,28 @@ The reult from this function is:
 
 ![alt text][image5]
 
+OpenCV Camera Calibration
+---
+General steps:
+
+Step 0. cv2.findChessboardCorners() 
+--
+Finds corners in chessboard images and combines arrays of 2D image points and 3D object points
+
+Step 1. cv2.calibratCamera()
+---
+Computes the calibration matrices and distortion coefficients 
+
+Step 2. Use cv2.undistort()
+---
+Undistorts a test image
+
+Intrinsics vs Extrinsics 
+---
+Intrinsic parameters are things that are inherent to the camera's focal length and optical center as well as the distortion coefficients.
+NOTE: These properties remain the same no matter how the camera is positioned in the world.
+
+Extrinsic parameters of the calibration process describe how the cam
 
 ## Extrinsic Calibration
 
