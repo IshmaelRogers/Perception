@@ -9,6 +9,7 @@
 [image4]: chessboard_angles
 [image5]: corner_found
 [link1]: http://wiki.ros.org/image_pipeline
+[image6]: voxelDS
 
 
 # Calibration 
@@ -171,10 +172,36 @@ Image registration is the process of transforming the data frame from one camera
 NOTE: This is essential for the creation of an accurate point cloud.
 
 ## RGBD in ROS
-Now we explore calibration in ROS's [image_pipeline][link1]
+Now we explore calibration in ROS's [image_pipeline][link1] which contain a suite of package that provide a variety of image manipulation tools. 
+camera_calibration is a package that allows the calibration of Monocular, Stereo and RGB-D cameras
+
+The process involves combining the RGB camera data with accompanying depth camera data to generate 3D point clouds.
+
 # Point Cloud Filtering 
+The process of removing usless, excessive and conflicting data points from within a point cloud.
+NOTE: Adversarial data might correspond to an object on the ground that resembles a target object on a table which could cause a false positive if it is not filtered out. 
+
+The following are commonly used filters from the Point Cloud Library:
+
+VoxelGrid Downsampling Filter
+ExtractIndices Filter
+PassThrough Filter
+RANSAC Plane Fitting
+Outlier Removal Filter
+
+
+Task: Identifying a an obeject in a cluttered environment. 
+---
+When observing point cloud data, you may notice that a majority of the data is not useful for identifying desired targets. Things such a background or other objects do not help recognize the target and should be regarded as noise. 
+NOTE: Processing this excessive data is inefficient and can cause you to waste compute cycles
+
 
 ## Voxel Grid Downsampling  
+Becuase RGB-D cameras provide feature rich and dense point clouds, it is best to downsample the data
+
+![alt text][image6]
+
+
 
 ## Pass Through Filter 
 
