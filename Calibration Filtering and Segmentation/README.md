@@ -149,13 +149,28 @@ NOTE: We apply the undist = cv2.undistort(img, mtx, dist, None, mtx) to apply th
 
 Please see cameraCalibration.py to run the code that implements this process.
 
-
-
-
 ## Extrinsic Calibration
+The relationship between the position of a point in the 2D pixel coordinates and the position of a corresponding point in the 3D world coordinates is defined by the pinhole camera model:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=z_{c}\begin{bmatrix}&space;u\\&space;v\\&space;1&space;\end{bmatrix}&space;=&space;K[RT]\begin{bmatrix}&space;x_{w}\\&space;y_{w}\\&space;z_{w}\\&space;1&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?z_{c}\begin{bmatrix}&space;u\\&space;v\\&space;1&space;\end{bmatrix}&space;=&space;K[RT]\begin{bmatrix}&space;x_{w}\\&space;y_{w}\\&space;z_{w}\\&space;1&space;\end{bmatrix}" title="z_{c}\begin{bmatrix} u\\ v\\ 1 \end{bmatrix} = K[RT]\begin{bmatrix} x_{w}\\ y_{w}\\ z_{w}\\ 1 \end{bmatrix}" /></a>
+
+Where:
+
+K is the intrinsic matrix derived previously
+R and T are the extrinsic parameters which denote the coordinate system transfomations from the 3D world coordinates to 3D camera coordinates
+NOTE: the extrinsic parameters define the position of the camera center and the camera's heading in world coordinates.
+
+T is the position of the origin of the world coordinate system expressed in coordinates of the camera-centered coordinate system.
+
+The position of the camera C = -R’ T
+
+NOTE: Given that the extrinsic parameters determine the 3D pose of respective camera in the world coordinates, they can also be used for the process of image registration.
+
+Image registration is the process of transforming the data frame from one camera to match the data frame from another, pixel by pixel.
+NOTE: This is essential for the creation of an accurate point cloud.
 
 ## RGBD in ROS
-
+Now we explore calibration in ROS's [http://wiki.ros.org/image_pipeline] image_pipeline 
 # Point Cloud Filtering 
 
 ## Voxel Grid Downsampling  
