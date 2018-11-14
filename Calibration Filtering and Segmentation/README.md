@@ -321,6 +321,7 @@ Calibration helps take care of distortion however noise due to external factors 
 StatisticalOutlierRemoval filter
 --
 Uses statistical analysis to remove the outliers that do not meet certain criteria. For each point in the point cloud, it computes the distance to all its neighbors and then calculates a mean distance. 
-NOTE:Assuming a Gaussian distribution, all points whose mean distabces are outside of an intercal defined by the global distances mean standard deviation are considered to be outliers and are removed fromt the point cloud.
+
+NOTE: Assuming a Gaussian distribution, all points whose mean distabces are outside of an intercal defined by the global distances mean standard deviation are considered to be outliers and are removed fromt the point cloud.
 
 
