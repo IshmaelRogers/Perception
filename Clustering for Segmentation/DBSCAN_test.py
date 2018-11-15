@@ -1,6 +1,11 @@
 ####DBSCAN Algorithm####
-Given a set {P} of n data points (p1, p2, ... , pn):
-###################
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+import cv2
+from sklearn.cluster import DBSCAN
+from extra_functions import cluster_gen
 
 # Import DBSCAN()
 
@@ -34,7 +39,7 @@ labels = db.labels_
 n_clusters = len(set(labels)) - (1 if -1 in labels else 0) 
 unique_labels = set(labels) 
 
-# Plot up the results!
+# Plot
 
 
 min_x = np.min(data[:, 0])
