@@ -6,7 +6,7 @@
 
 [image1]: ./images/k-means.png
 [image2]: ./images/clustercompare.png
-[image3]: ./images/DBSCAN
+[image3]: ./images/DBSCAN.png
       
 
 # Clustering for Segmentation 
@@ -124,9 +124,36 @@ y_off = range of cluster position offset in the y-direction
 
 # DBSCAN Algorithm
 
+(Density-Based Spatial CLustering of Applications with Noise) aka Euclidean Clustering
+
 ![alt text][image3]
 
-This clustering algorithm is used when you do not know how many clusters to expect in the dataset
+This clustering algorithm is an alternative to k-means when the number of clusters to expect in the dataset is unknown but something about how the points should be clustered in terms of density (distance between points in a cluster). 
+
+It works by creating clusters by grouping data points that are within some threshold distance, <a href="https://www.codecogs.com/eqnedit.php?latex=d_{th}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?d_{th}" title="d_{th}" /></a> from the nearest other point in the data. 
+
+The decision of whether to place a point in a cluster is based on the Euclidean distance between that point and other cluster members
+
+NOTE: The Euclidean distance is the length of a line connecting two points. The coordniates defining the positions of points in the dataset do no need to be spatial coordinates. 
+
+Given points p and q in an n-dimensional dataset where the position of p and q are defined as follows: 
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=(p_{1},&space;p_{2},\cdots,&space;p_{n})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(p_{1},&space;p_{2},\cdots,&space;p_{n})" title="(p_{1}, p_{2},\cdots, p_{n})" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=(q_{1},&space;q_{2},\cdots,&space;q_{n})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(q_{1},&space;q_{2},\cdots,&space;q_{n})" title="(q_{1}, q_{2},\cdots, q_{n})" /></a>
+
+The distance between the two point is:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=D&space;=&space;\sqrt{(p_{1}-q_{1})^{2}&space;&plus;&space;(p_{2}-q_{2})^{2}&plus;\cdots&space;&plus;&space;(p_{n}-q_{n})^2)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D&space;=&space;\sqrt{(p_{1}-q_{1})^{2}&space;&plus;&space;(p_{2}-q_{2})^{2}&plus;\cdots&space;&plus;&space;(p_{n}-q_{n})^2)}" title="D = \sqrt{(p_{1}-q_{1})^{2} + (p_{2}-q_{2})^{2}+\cdots + (p_{n}-q_{n})^2)}" /></a>
+
+Steps for DBSCAN Clustering
+--
+Given a
+
+
+
+
+
 
 # DBSCAN vs K-means
 
