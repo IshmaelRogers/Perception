@@ -148,11 +148,27 @@ The distance between the two point is:
 
 Steps for DBSCAN Clustering
 --
-Given a
+Given a set P of n data points <a href="https://www.codecogs.com/eqnedit.php?latex=p_{1},&space;p_{2},&space;\cdots&space;,&space;p_{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{1},&space;p_{2},&space;\cdots&space;,&space;p_{n}" title="p_{1}, p_{2}, \cdots , p_{n}" /></a> : 
 
+0. Set contrainsts for the minimum number of points that make up a cluster (min_samples)
+1. Set the distance maximum distance between cluster points (max_dist)
+2. For ever point <a href="https://www.codecogs.com/eqnedit.php?latex=p_{i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{i}" title="p_{i}" /></a> in P:
+      if <a href="https://www.codecogs.com/eqnedit.php?latex=p_{i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{i}" title="p_{i}" /></a> has at least one neighbor within max_dist:
+            if <a href="https://www.codecogs.com/eqnedit.php?latex=p_{i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{i}" title="p_{i}" /></a>'s neighbor is part of a cluster 
+                  add <a href="https://www.codecogs.com/eqnedit.php?latex=p_{i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{i}" title="p_{i}" /></a> to that cluster
+            if <a href="https://www.codecogs.com/eqnedit.php?latex=p_{i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{i}" title="p_{i}" /></a> has at least min_samples -1 neighbors within max_dist:
+                  <a href="https://www.codecogs.com/eqnedit.php?latex=p_{i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{i}" title="p_{i}" /></a> becomes a "core member" of the cluster
+            else: 
+            <a href="https://www.codecogs.com/eqnedit.php?latex=p_{i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{i}" title="p_{i}" /></a> becomes an "edge member" of the cluster
+     else:
+            <a href="https://www.codecogs.com/eqnedit.php?latex=p_{i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{i}" title="p_{i}" /></a> is defined as an outlier.
+        
 
+We need to control the order in which we visit data points to avoid visiting every data point at random and creating a lot more clusters than needed. To do this, each time we create a new cluster with our first qualifying point, we will add all of its neighbors to the cluster. Then we add its neighbor's neighbor's and their neighbors until we have visited every data point that belongs to this cluster.
 
+NOTE: This step is crucial and only after do it, we may move on to choosing another data point at random. Doing this will guarantee that a cluster is complete and no more points in the data set belong to that cluster. See DBSCAN Wiki for pseudo-code implementation
 
+Take a look at DBSCAN_test.py in this repo!
 
 
 # DBSCAN vs K-means
