@@ -111,6 +111,16 @@ for idx, xpts in enumerate(kmeans_clusters_x):
 The results of this code: 
 ![alt text][image2]
 
+Tuneable parameters
+---
+n_clusters = number of clusters to generate
+pts_minmax = range of number of points per cluster 
+x_mult = range of multiplier to modify the size of cluster in the x-direction
+y_mult = range of multiplier to modify the size of cluster in the y-direction
+x_off = range of cluster position offset in the x-direction
+y_off = range of cluster position offset in the y-direction
+    
+
 # DBSCAN Algorithm
 
 # DBSCAN vs K-means
