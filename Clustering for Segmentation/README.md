@@ -6,6 +6,7 @@
 
 [image1]: ./images/k-means.png
 [image2]: ./images/clustercompare.png
+[image3]: ./images/DBSCAN
       
 
 # Clustering for Segmentation 
@@ -122,6 +123,10 @@ y_off = range of cluster position offset in the y-direction
     
 
 # DBSCAN Algorithm
+
+![alt text][image3]
+
+This clustering algorithm is used when you do not know how many clusters to expect in the dataset
 
 # DBSCAN vs K-means
 
