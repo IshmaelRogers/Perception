@@ -60,7 +60,7 @@ criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
 compactness, label, center = cv2.kemeans(data, k_clusters, None, criteria, 10, cv2.KMEANS_RANDOM_CENTERS)
 
 
-## Extract individual clusters for plotting 
+####### Extract individual clusters for plotting 
 
 # Define empty lists to recieve the k-means cluster points
 
