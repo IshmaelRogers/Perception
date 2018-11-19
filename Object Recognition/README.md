@@ -49,14 +49,22 @@ NOTE: Objects can appear to have a different colors under various lighting condi
 
 To better optimize our perception pipeline, we convert this RGB color representation to another color representation in order to make thresholding or color selection operations less sensitive to light. 
 
-HSV is very robust to lighting changes 
+The Hue Saturationa and Value color space is very robust to lighting changes. Color is represented by a cylinder as seen below.
 
 ![alt text][image2]
 
-# HSV Intuition
+Hue - The angular position around the cylinder that describes colors in a pixel. 
+Saturation - The radial distance from the center axes describing the intensity of that color
+Value - The aural brightness lies along the vertical axis. 
+
+Convert RGB to HSV using openCV
+---
+hsv_image = cv2.cvtColor(rgb_image, cv2.COLOR_RGB2HSV) 
+
+NOTE: Dim lighting will make the HSV color space more bright. 
 
 # Color Histograms
-
+Previously we mentioned using color information as a way to recognize features of an object of interest. To do this, we make use of histograms 
 # Surface Normals
 
 # Support Vector Machine 
