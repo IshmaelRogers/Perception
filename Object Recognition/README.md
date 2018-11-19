@@ -7,6 +7,7 @@
 # Object Recognition
 
 [image1]: ./images/RGBD.PNG
+[image2]: ./images/HSV.PNG
 
 Object recognition is a very important concept in computer vision and robotics. We can equip robots with sensors so that they may be able to perceive the world around them. It is our job to provide them with the ability to recoginize objects based on previous data. 
 
@@ -42,6 +43,15 @@ Detailed shape information - 3D spatial distribution of points.
 Each image has an associated red, green and blue color value. RGB can be thought of as the filling of a color grid where the position along each axis defines how much red, green and blue there is in a point 
 
 ![alt text][image1] 
+
+An RGB representation of color is good at reproducing what we see with human eyes. However, it is not optimal for representing color in perception tasks dealing with robotics.
+NOTE: Objects can appear to have a different colors under various lighting conditions. 
+
+To better optimize our perception pipeline, we convert this RGB color representation to another color representation in order to make thresholding or color selection operations less sensitive to light. 
+
+HSV is very robust to lighting changes 
+
+![alt text][image2]
 
 # HSV Intuition
 
