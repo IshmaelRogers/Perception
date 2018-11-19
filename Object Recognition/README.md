@@ -6,7 +6,7 @@
 
 # Object Recognition
 
-[image1]: ./images/RGB.PNG
+[image1]: ./images/RGBD.PNG
 
 Object recognition is a very important concept in computer vision and robotics. We can equip robots with sensors so that they may be able to perceive the world around them. It is our job to provide them with the ability to recoginize objects based on previous data. 
 
