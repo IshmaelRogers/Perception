@@ -9,6 +9,7 @@
 [image1]: ./images/RGBD.PNG
 [image2]: ./images/HSV.PNG
 [image3]: ./images/SVM.PNG
+[image4]: ./images/confusionmatrix.PNG
 
 Object recognition is a very important concept in computer vision and robotics. We can equip robots with sensors so that they may be able to perceive the world around them. It is our job to provide them with the ability to recoginize objects based on previous data. 
 
@@ -166,11 +167,15 @@ print('For labels: ', y_test[0:10])
 
 Please see the SVM_image_classifier.py file for a complete implementation of this process. 
 
-# Recognition Exercise
-
-# Generate Features
 
 # Train the Support Vector Machine
+
+Now that the features have been extracted successfully, we need to train the model using train_svm.py
+
+Confusion Matrix
+---
+![alt text][image4]
+
 
 # Improving the Model
 
