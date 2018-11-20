@@ -64,7 +64,18 @@ hsv_image = cv2.cvtColor(rgb_image, cv2.COLOR_RGB2HSV)
 NOTE: Dim lighting will make the HSV color space more bright. 
 
 # Color Histograms
-Previously we mentioned using color information as a way to recognize features of an object of interest. To do this, we make use of histograms 
+Previously we mentioned using color information as a way to recognize features of an object of interest. To do this, we make use of histograms. 
+
+Creating histograms involves dividing the the range of data values (0-255) into discrete bins and count up how many of the values fall into each bin. 
+
+Then we compare the colored histogram of a known object image with regions of a test image. We observed that locations with similar color distrubutions will reveal a close match.
+NOTE: This method removes any dependence on spatial structure. Therefore, the systen is no longer sensitive to a perfect arrangemenet of points.
+
+Objects with slightly different poses and orientations can still be matched. Size variations in images can be accounted for by normalizing the histograms. 
+NOTE: Only using histograms will make us rely solely on the distribution of color value which could lead the system to match unwanted regions and producing false positives. 
+
+See the histograms.py file in this repo in order to find python code for creating histograms. 
+
 # Surface Normals
 
 # Support Vector Machine 
