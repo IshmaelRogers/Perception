@@ -146,7 +146,9 @@ General Steps:
 The labels vector, y will be a binary vector indicating whether each featur vector in the dataset corresponds to a car or non-car
 NOTE: 1's will be assigned to cars and 0's will be assigned to non-cars
 
-The function extract_features calls on the histogram function function defined in histogram.py and will generate a list of features from the image dataset. 
+The function extract_features calls on the histogram function function defined in histogram.py and will generate a list of features from the image dataset.
+
+Given lists of car and non-car features we can define a labels vector that consists of a bunch of ones and zeros
 
 
 
