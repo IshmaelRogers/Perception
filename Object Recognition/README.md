@@ -176,7 +176,8 @@ Confusion Matrix
 ---
 ![alt text][image4]
 
+The confusion matrix (aka error matrix), is a table that allows visualization of the performance of a supervised learning algorithm. Each row of the matrix represents the instances in a predicted class while each column represents the instances in an actual class. In general it makes it easy to see if the system is confusing two classes by mislabeling one as another. 
 
-# Improving the Model
+
 
 # Object Recognition
