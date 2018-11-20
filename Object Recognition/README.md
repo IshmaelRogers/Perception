@@ -8,6 +8,7 @@
 
 [image1]: ./images/RGBD.PNG
 [image2]: ./images/HSV.PNG
+[image3]: ./images/SVM.PNG
 
 Object recognition is a very important concept in computer vision and robotics. We can equip robots with sensors so that they may be able to perceive the world around them. It is our job to provide them with the ability to recoginize objects based on previous data. 
 
@@ -90,7 +91,9 @@ The normal to any surface is simply a unit vector that is perpendicular to that 
 
 # Support Vector Machine 
 
-The SVM is a supervised machine learning algorithm that characterizes the parameter space of a dataset into discrete classes. They work by applying an iterative method to a trainning datasete where each item in the training set is characterized by a 
+The SVM is a supervised machine learning algorithm that characterizes the parameter space of a dataset into discrete classes. They work by applying an iterative method to a trainning datasete where each item in the training set is characterized by a feature vector and a label. 
+
+![alt text][image3]
 
 # Support Vector Machine Intuition
 
