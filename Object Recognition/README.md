@@ -150,8 +150,21 @@ The function extract_features calls on the histogram function function defined i
 
 Given lists of car and non-car features we can define a labels vector that consists of a bunch of ones and zeros
 
+After that, we will need to stack and scale the feature vectors.
+NOTE: sklearn requires that we stack the feature vectors into a single array
+NOTE: Per column normalization makes sure that all of the features are roughly the same scale (zero mean and unit variance.
 
+Next, we shuffle and split the data into training and testing sets. 
+NOTE: To ensure that any ordering of the data doesn't affect the training of the classifer, always test classifiers on a separate data set from the one that was used to train on.
 
+To perform the step mentioned above we will use the train_test_split() function. 
+NOTE: The train_test_split() function performs both the shuffle and split of the data. 
+
+Finally, define the classifier using the SVC with a linear kernel. 
+NOTE: Always check the accuracy of the classifier on the test data set --> print('Test Accuracy of SVC = ', svc.score(X_test, y_test)) or make predictions on a subset of the test data and compare directly with the ground truth --> print('My SVC predicts: ', svc.predict(X_test[0:10].reshape(1, -1)))
+print('For labels: ', y_test[0:10])
+
+Please see the SVM_image_classifier.py file for a complete implementation of this process. 
 
 # Recognition Exercise
 
