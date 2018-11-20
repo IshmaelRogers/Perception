@@ -118,7 +118,38 @@ Please see the SVM.py file in this repo for implementation of SVM's using
 
 # Support Vector Machine Intuition
 
+Evaluating sk.learn.SVC function
+---
+
+0. When clusters slightly overlap the SVC finds a boundary line that best separates the clusters
+1. When clusters are completely overlapping the SVC does a poor job of separating them or fails completely 
+2. Poly, sigmoid, precomputed and callable kernels are also available besides linear and rbf.
+
 # Support Vector Machine Image Classification 
+
+When using point cloud data, the system will have access to a rich feature set including color and surface normal hostograms. Classification with a 3D point cloud works the same way as with 2 features. Let's explore an example of image classification using color histograms. 
+
+Example
+---
+
+This dataset is composed of hundreds of images of cars and other images that might be in the same scene witha car, but they are not cars.
+Goal: Train an SVM to recognize whether an image contains a car or not based on an input feature vector composed of color histograms. 
+NOTE: Concepts related to training data and evaluating the classifer's performance will be discussed.
+
+General Steps:
+---
+0. Read in images of both cars and non-cars
+1. Extract the color feature for each and scale the feature vectors to zero mean an unit variance.
+2. Define a labels vector, shuffle and split data into training and testing sets
+3. Define a classifier and train it. 
+
+The labels vector, y will be a binary vector indicating whether each featur vector in the dataset corresponds to a car or non-car
+NOTE: 1's will be assigned to cars and 0's will be assigned to non-cars
+
+The function extract_features calls on the histogram function function defined in histogram.py and will generate a list of features from the image dataset. 
+
+
+
 
 # Recognition Exercise
 
