@@ -78,7 +78,19 @@ See the histograms.py file in this repo in order to find python code for creatin
 
 # Surface Normals
 
+In this section will learn how to include shape information into our feature set so that we can take advantage of geometric properties in order to properly recoginize objects in a scene. 
+
+The goal is to compare the distribution of points in a point cloud with a reference distribution in order to determine whether or not the object of interest has been found. To caputre shape information, the surface normal distribution is necessary.
+NOTE: Histograms will be created using surface normals 
+
+Definition: Normals
+---
+The normal to any surface is simply a unit vector that is perpendicular to that surface. The normals at different points along a changing surface will point in different directions and the distribution of surface normals taken as a whole can be used to describe the shape of an object. 
+
+
 # Support Vector Machine 
+
+The SVM is a supervised machine learning algorithm that characterizes the parameter space of a dataset into discrete classes. They work by applying an iterative method to a trainning datasete where each item in the training set is characterized by a 
 
 # Support Vector Machine Intuition
 
