@@ -95,6 +95,27 @@ The SVM is a supervised machine learning algorithm that characterizes the parame
 
 ![alt text][image3]
 
+In the image above, each point is characterized by 2 features, A and B. The color of each point corresponds to its label  i.e which class of objeect it represents in the dataset. 
+
+Decision Boundariess
+--
+The divisions between classes in parameter space.
+NOTE: They are shown here by the colored polygons overlaid on the data. 
+
+Creating decision boundaries means that the system is considering a new object for which there is a feature but no label. Doing this can immediately assign it to a specific class. 
+
+NOTE: Once the SVM is trained, it can be used for object recognition.
+
+SVMs in Scikit-Learn
+---
+Provides a variety of SVM implementations to choose from. In this repo we will use a basic SVM witha linear kernel because it does a good job at classification and it runs faster than more complicated implementations. 
+
+Training Data
+---
+Before training SVMs we need a labeled data set. 
+
+Please see the SVM.py file in this repo for implementation of SVM's using 
+
 # Support Vector Machine Intuition
 
 # Support Vector Machine Image Classification 
