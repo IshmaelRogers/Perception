@@ -96,6 +96,4 @@ Given a set P of n data points <a href="https://www.codecogs.com/eqnedit.php?lat
  
  ![alt text][image1] 
  
- Object recognition steps have been implemented in the pcl_callback() function within template Python script. 
- 
----
+
