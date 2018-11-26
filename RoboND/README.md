@@ -84,21 +84,18 @@ Given a set P of n data points <a href="https://www.codecogs.com/eqnedit.php?lat
         
 
  compute_color_histograms()
+ ---
  The compute_color_histograms() function takes advantage of color information about the objects and computes a histogram in the HSV color space. It normalizeed the results and returns a feature vector. 
  
  compute_normal_histograms()
+ ---
  The compute_normal_histograms() function is similar to the above function except that it takes advantage of shape information. 
  
- SVM has been trained using train_svm.py. 
- 
- snapshot of your normalized confusion matrix (output from train_svm.py in your writeup / README. 
+ Normalized confusion matrix 
+ ---
  
  ![alt text][image1] 
  
  Object recognition steps have been implemented in the pcl_callback() function within template Python script. 
  
 ---
-
-# Pick and Place Setup
-
-You can add this functionality to your already existing ros node or create a new node that communicates with your perception pipeline to perform sequential object recognition. Save your PickPlace requests into output_1.yaml, output_2.yaml, and output_3.yaml for each scene respectively. Add screenshots in your writeup of output showing label markers in RViz to demonstrate your object recognition success rate in each of the three scenarios. Note: for a passing submission, your pipeline must correctly identify 100% of objects in test1.world, 80% (4/5) in test2.world and 75% (6/8) in test3.world.
