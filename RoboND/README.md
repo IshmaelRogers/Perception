@@ -4,6 +4,8 @@
 ## Udacity Perception Project
 ## 2018
 
+[image1]: ./images/normalized_confusion_matrix.png
+
 pcl_callback() Function
 ---
 This function will be called each time a message is publish to the "/pr2/world/points topic. It consist of the entire perception pipeline (i.e segmentation, clustering and object recognition). It also calls the pr2 mover function that tells the robot how to pick and place the object of interest. 
@@ -82,10 +84,16 @@ Given a set P of n data points <a href="https://www.codecogs.com/eqnedit.php?lat
         
 
  compute_color_histograms()
+ The compute_color_histograms() function takes advantage of color information about the objects and computes a histogram in the HSV color space. It normalizeed the results and returns a feature vector. 
+ 
  compute_normal_histograms()
+ The compute_normal_histograms() function is similar to the above function except that it takes advantage of shape information. 
+ 
  SVM has been trained using train_svm.py. 
  
  snapshot of your normalized confusion matrix (output from train_svm.py in your writeup / README. 
+ 
+ ![alt text][image1] 
  
  Object recognition steps have been implemented in the pcl_callback() function within template Python script. 
  
