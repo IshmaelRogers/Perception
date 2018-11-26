@@ -8,9 +8,38 @@ pcl_callback() Function
 ---
 This function will be called each time a message is publish to the "/pr2/world/points topic. It consist of the entire perception pipeline (i.e segmentation, clustering and object recognition). It also calls the pr2 mover function that tells the robot how to pick and place the object of interest. 
 
+Point Cloud Filtering
+---
+The process of removing useless, excessive and conflicting data points from within a point cloud. NOTE: Adversarial data might correspond to an object on the ground that resembles a target object on a table which could cause a false positive if it is not filtered out.
+The following filters were used  from the Point Cloud Library:
+VoxelGrid Downsampling Filter ExtractIndices Filter PassThrough Filter RANSAC Plane Fitting Outlier Removal Filter
+
+Voxel Downsampling
+---
+Becuase RGB-D cameras provide feature rich and dense point clouds, it is best to downsample the data using a Voxel Grid Downsampling Filter.
+A voxel grid filter allows for the downsampling of data by a spatial average of the points in the cloud confined by each voxel. The sampling size can ve adjusted by setting the voxel size along each dimension.
+
+Passthrough Filter 
+---
+Given prior information about the location of the target in the scene, a Pass Through Filter can be applied to remove useless data from your point cloud.
+The Pass Through Filter is similar to a cropping tool, which allows you to crop any given 3D point cloud by specifying an axis with cut-off values along that axis.
+
+Segmentaion
+---
+In this step we will divide the point cloud data into smaller subsets based on some common property. Moreover, we can separate the data into meaningful pieces based on shape, color, size or neighborhood.
+
+
 RANSAC
 ---
+The Random Sample Consensus algorithm can be used to identify points in the cloud dataset that belong to a particular model. The model could be a plane, a cylinder, a box or any other common shape. The algorithm assumes that the dataset is composed of both inliers and outliers
 
+Inliers
+---
+The set of points that are defined by a particular model with a specific set of parameters.
+
+Ouliers
+---
+Are the data points that do not fit that model and can be discarded
 
 Cluster Segmentation
 --- 
