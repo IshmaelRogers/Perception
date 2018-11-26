@@ -8,6 +8,10 @@ pcl_callback() Function
 ---
 This function will be called each time a message is publish to the "/pr2/world/points topic. It consist of the entire perception pipeline (i.e segmentation, clustering and object recognition). It also calls the pr2 mover function that tells the robot how to pick and place the object of interest. 
 
+RANSAC
+---
+
+
 Cluster Segmentation
 --- 
 Is the process of finding similarities among individual points in some point cloud data so that they may be segmented. By clustering data we provide our robot with a way to determine which components of a dataset naturally belong together. NOTE: Clustering can be performed based on spatial neighborhood as well as color.
@@ -48,7 +52,14 @@ Given a set P of n data points <a href="https://www.codecogs.com/eqnedit.php?lat
             <a href="https://www.codecogs.com/eqnedit.php?latex=p_{i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{i}" title="p_{i}" /></a> is defined as an outlier.
         
 
-Both compute_color_histograms() and compute_normal_histograms() functions have been filled out and SVM has been trained using train_svm.py. Please provide a snapshot of your normalized confusion matrix (output from train_svm.py in your writeup / README. Object recognition steps have been implemented in the pcl_callback() function within template Python script. Not required, but to help your reviewer consider adding screenshots of output at different steps in your writeup with brief explanations.
+ compute_color_histograms()
+ compute_normal_histograms()
+ SVM has been trained using train_svm.py. 
+ 
+ snapshot of your normalized confusion matrix (output from train_svm.py in your writeup / README. 
+ 
+ Object recognition steps have been implemented in the pcl_callback() function within template Python script. 
+ 
 ---
 
 # Pick and Place Setup
