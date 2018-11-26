@@ -4,14 +4,12 @@
 ## Udacity Perception Project
 ## 2018
 
-
-## Exercise 1, 2 and 3 Pipeline Implemented
-
-The writeup / README should include a statement and supporting figures / images that explain how each rubric item was addressed, and specifically where in the code each step was handled. The writeup should include a discussion of what worked, what didn't and how the project implementation could be improved going forward.
+pcl_callback() Function
 ---
+This function will be called each time a message is publish to the "/pr2/world/points topic. It consist of the entire perception pipeline (i.e segmentation, clustering and object recognition). It also calls the pr2 mover function that tells the robot how to pick and place the object of interest. 
 
-The pcl_callback() function within the template Python script has been filled out to include filtering and RANSAC plane fitting. Not required, but to help your reviewer consider adding screenshots of output at different steps in your writeup with brief explanations
----
+Cluster Segmentation
+--- 
 
 Steps for cluster segmentation have been added to the pcl_callback() function in the template Python script. Not required, but to help your reviewer consider adding screenshots of output at different steps in your writeup with brief explanations.
 ---
