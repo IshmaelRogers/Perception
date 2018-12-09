@@ -9,6 +9,18 @@
 [image3]: ./images/out2.png
 [image4]: ./images/out3.png 
 
+Project Background
+---
+
+This project was modeled after Amazon's Robotic Pick and Place challenge. The goal is to program a pick and place robot that could can use perception data to recoginze and separate items based on its time. The main focus of Udacity's take on this project is to create a perception pipeline that can effectively recognize objects based on previously generated models. Those models are feature vectors that are generated from both color and shape histograms. These feature vectors were provided a label so that a supervised learning algorithm could be employed for object recognition.
+
+What worked for you?
+
+Following Udacity's guidelines to complete this project was helpful. The most challenging was choosing appropriate hyper-parameters for training purposea.
+
+how could your project implementation be improved?
+
+One thing I would do to improve this project is code optimization i.e condensing my code into functions and write scripts to call those functions more efficiently. 
 
 pcl_callback() Function
 ---
