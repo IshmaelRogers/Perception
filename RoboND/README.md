@@ -5,6 +5,10 @@
 ## 2018
 
 [image1]: ./images/normalized_confusion_matrix.png
+[image2]: ./images/out1.png
+[image3]: ./images/out2.png
+[image4]: ./images/out3.png 
+
 
 pcl_callback() Function
 ---
@@ -96,4 +100,20 @@ Given a set P of n data points <a href="https://www.codecogs.com/eqnedit.php?lat
  
  ![alt text][image1] 
  
+Output Results 
+---
+Output 1
+
+![alt text][image2]
+
+Output 2 
+
+![alt text][image3] 
+
+Output 3
+
+![alt text][image4]
+
+
+
 
